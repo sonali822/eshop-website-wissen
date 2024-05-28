@@ -8,8 +8,16 @@
             <input type="text" name="" formControlName="username" placeholder="Username" />
            
             <input type="password"formControlName="password" name="" placeholder="Password" />
+            <span class="toggle-password"><i id="toggler" class="far fa-eye"
+							(click)="togglePasswordVisibility()">
+            </i></span>
            <p>  Password must contain at least one special character, one capital letter, and one number.
         </p>
+        <div style="margin-right: 300px; display: flex; align-items: center;">
+          <input type="checkbox" style="margin-right: 5px;" formControlName="consentChecked"> 
+          <span>Conditions</span>
+        </div>
+        
             <input type="submit" name="" value="SignUp"[style.background]="signUpForm.invalid ? 'gray' : 'green'" />
            
            <div> Already Have an account ? 

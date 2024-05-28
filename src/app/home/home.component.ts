@@ -3,11 +3,12 @@ import { ProductService } from '../product.service';
 import { Product } from '../product';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,HeaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

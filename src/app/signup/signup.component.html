@@ -1,0 +1,24 @@
+<section>
+    <div class="container">
+      <div class="user signupBox">
+        <div class="imgBx"><img src="https://img.freepik.com/premium-vector/happy-shop-logo-template_57516-57.jpg?w=996" alt="" /></div>
+        <div class="formBx">
+          <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <h2>Sign Up</h2>
+            <input type="text" name="" formControlName="username" placeholder="Username" />
+           
+            <input type="password"formControlName="password" name="" placeholder="Password" />
+           <p>  Password must contain at least one special character, one capital letter, and one number.
+        </p>
+            <input type="submit" name="" value="SignUp"[style.background]="signUpForm.invalid ? 'gray' : 'green'" />
+           
+           <div> Already Have an account ? 
+              <button  (click)="navigateToLogin()">Login</button>
+           </div> 
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>

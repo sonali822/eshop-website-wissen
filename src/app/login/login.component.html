@@ -20,10 +20,9 @@
 						<input type="checkbox" style="margin-right: 5px;" formControlName="consentChecked">
 						<span>Conditions</span>
 					</div>
-							
 					<input type="submit" name="" value="Login" [style.background]="loginForm.invalid ? 'gray' : 'green'"
-						[disabled]="loginForm.invalid" />
-
+						 />
+						 <!-- [disabled]="loginForm.invalid" -->
 					<div> Dont have account ?
 						<button (click)="navigateToSignup()">Sign up</button>
 					</div>

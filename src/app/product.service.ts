@@ -15,6 +15,7 @@ export class ProductService {
   getAllProducts(limit: number, skip: number): Observable<{ products: Product[] }> {
     return this.httpClient.get<{ products: Product[] }>(`${this.apiUrl}?limit=${limit}&skip=${skip}`);
   }
+ 
 
   getSingleProduct(id: number): Observable<Product> {
     return this.httpClient.get<Product>(`${this.apiUrl}/${id}`);

@@ -50,7 +50,7 @@ export class SignupComponent {
         console.log(response); // Handle response here
       });
     } else {
-      alert('Invalid form');
+      alert('Please fill the Required Details');
     }
   }
   navigateToLogin() {

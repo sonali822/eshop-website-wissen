@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
   }
   
   onSubmit() {
-    //if (this.loginForm.valid) {
+   if (this.loginForm.valid) {
       console.log('Form submitted successfully');
       const username = this.loginForm.value.username;
       const password = this.loginForm.value.password;
@@ -80,9 +80,10 @@ export class LoginComponent implements OnInit {
           console.error('Login failed:', error);
         }
       );
-    // }else{
-    //   alert("Wrong")
-    // }
+    }else{
+      console.log('Error while validating:');
+      alert('Please fill the Required Details');
+    }
   }
   navigateToSignup() {
     this.router.navigate(['/signup']);

@@ -1,7 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subject, filter, take, takeUntil } from 'rxjs';
+import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AuthServiceService } from '../auth-service.service';
@@ -18,6 +17,7 @@ import { User } from '../user';
 export class LoginComponent implements OnInit {
   public username = '';
   public password = '';
+ public consentChecked  = false;
   loginForm!: FormGroup;
   isPasswordVisible: boolean = false;
 
@@ -31,7 +31,9 @@ export class LoginComponent implements OnInit {
   public ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
-      password: ['', [Validators.required, this.passwordValidator()]]
+      password: ['', [Validators.required, this.passwordValidator()]
+    ],
+    consentChecked: [false, Validators.requiredTrue]
     });
   }
 
@@ -61,7 +63,7 @@ export class LoginComponent implements OnInit {
   }
   
   onSubmit() {
-    //if (this.loginForm.valid) {
+   if (this.loginForm.valid) {
       console.log('Form submitted successfully');
       const username = this.loginForm.value.username;
       const password = this.loginForm.value.password;
@@ -78,9 +80,10 @@ export class LoginComponent implements OnInit {
           console.error('Login failed:', error);
         }
       );
-    // }else{
-    //   alert("Wrong")
-    // }
+    }else{
+      console.log('Error while validating:');
+      alert('Please fill the Required Details');
+    }
   }
   navigateToSignup() {
     this.router.navigate(['/signup']);

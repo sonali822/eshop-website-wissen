@@ -115,3 +115,12 @@ section .container .user .formBx form input[type='submit'] {
     width: 100%;
   }
 }
+
+.toggle-password {
+  position: absolute;
+  right: 60px;
+  margin-top: 20px;
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+}
+

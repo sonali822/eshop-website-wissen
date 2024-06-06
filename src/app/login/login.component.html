@@ -1,25 +1,35 @@
-	<section>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<section>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-	  <div class="container">
+	<div class="container">
 		<div class="user signinBx">
-		  <div class="imgBx"><img src="https://img.freepik.com/premium-vector/happy-shop-logo-template_57516-57.jpg?w=996" alt="" /></div>
-		  <div class="formBx">
-			<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-			  <h2>Sign In</h2>
-			  <input type="text" name="" formControlName="username" placeholder="Username" />
-			 
-			  <input  id="password-field" type="password"formControlName="password" name="" placeholder="Password" />
-			  <span class="toggle-password"><i id="toggler"class="far fa-eye" (click)="togglePasswordVisibility()"></i></span>
-			 <input type="submit" name="" value="Login"[style.background]="loginForm.invalid ? 'gray' : 'green'" />
-			 
-			 <div> Dont have account ? 
-				<button  (click)="navigateToSignup()">Sign up</button>
-			 </div> 
+			<div class="imgBx"><img
+					src="https://img.freepik.com/premium-vector/happy-shop-logo-template_57516-57.jpg?w=996" alt="" />
+			</div>
+			<div class="formBx">
+				<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+					<h2>Sign In</h2>
+					<input type="text" name="" formControlName="username" placeholder="Username" />
 
-			</form>
+					<input id="password-field" type="password" formControlName="password" name=""
+						placeholder="Password" />
+					<span class="toggle-password">
+						<i id="toggler" class="far fa-eye" (click)="togglePasswordVisibility()"></i></span>
+			
+					<div style="margin-right: 300px; display: flex; align-items: center;">
+						<input type="checkbox" style="margin-right: 5px;" formControlName="consentChecked">
+						<span>Conditions</span>
+					</div>
+					<input type="submit" name="" value="Login" [style.background]="loginForm.invalid ? 'gray' : 'green'"
+						 />
+						 <!-- [disabled]="loginForm.invalid" -->
+					<div> Dont have account ?
+						<button (click)="navigateToSignup()">Sign up</button>
+					</div>
 
-		  </div>
+				</form>
+
+			</div>
 		</div>
-	  </div>
-	</section>
+	</div>
+</section>
